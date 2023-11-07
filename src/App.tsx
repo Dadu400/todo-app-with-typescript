@@ -24,6 +24,7 @@ const App: React.FC = () => {
         title: e.currentTarget.value,
         checked: false,
         date: Date.now(),
+        color: getRandomColor(),
       };
       setTodos((prevTodos) => [newTodo, ...prevTodos]);
       setTodo("");
@@ -43,6 +44,10 @@ const App: React.FC = () => {
         return todo;
       })
     );
+  };
+
+  const getRandomColor = () => {
+    return `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`;
   };
 
   const getRandomInt = (max: number): number => {
@@ -89,11 +94,9 @@ const App: React.FC = () => {
                 </TodoDate>
               )}
               <DeleteBtn
-                style={{
-                  borderColor: `rgb(${getRandomInt(255)}, ${getRandomInt(
-                    255
-                  )}, ${getRandomInt(255)})`,
-                }}
+               style={{
+                borderColor: todoItem.color,
+              }}
                 onClick={() => onTodoDeleted(todoItem)}
               />
             </TodoWrapper>

@@ -51,5 +51,5 @@ export const DeleteBtn = styled.div`
   height: 13px;
   cursor: pointer;
   border-radius: 4px;
-  // border: 2px solid ${() => '#' + Math.floor(Math.random() * 16777215).toString(16)};
+  border: 2px solid red;
 `;

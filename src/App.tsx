@@ -45,6 +45,10 @@ const App: React.FC = () => {
     );
   };
 
+  const getRandomInt = (max: number): number => {
+    return Math.floor(Math.random() * max);
+  };
+
   return (
     <Container>
       <GlobalStyles />
@@ -85,6 +89,11 @@ const App: React.FC = () => {
                 </TodoDate>
               )}
               <DeleteBtn
+                style={{
+                  borderColor: `rgb(${getRandomInt(255)}, ${getRandomInt(
+                    255
+                  )}, ${getRandomInt(255)})`,
+                }}
                 onClick={() => onTodoDeleted(todoItem)}
               />
             </TodoWrapper>
